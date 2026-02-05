@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content OS Architecture Playground</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      padding: 16px 24px;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .tabs {
+      display: flex;
+      gap: 8px;
+    }
+    .tab {
+      padding: 8px 16px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #c9d1d9;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .tab.active {
+      background: #388bfd;
+      border-color: #388bfd;
+      color: #fff;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+    .canvas-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      cursor: grab;
+    }
+    canvas:active { cursor: grabbing; }
+    .sidebar {
+      width: 340px;
+      border-left: 1px solid #30363d;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .sidebar-section {
+      padding: 16px;
+      border-bottom: 1px solid #30363d;
+    }
+    .sidebar-section h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #8b949e;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .task-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .task-card:hover {
+      border-color: #388bfd;
+      background: #1c2128;
+    }
+    .task-card.selected {
+      border-color: #388bfd;
+      background: #1c2128;
+    }
+    .task-priority {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background: #30363d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+      cursor: grab;
+    }
+    .task-priority.p1 { background: #f85149; color: #fff; }
+    .task-priority.p2 { background: #f0883e; color: #fff; }
+    .task-priority.p3 { background: #3fb950; color: #fff; }
+    .task-content { flex: 1; min-width: 0; }
+    .task-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .task-status {
+      font-size: 11px;
+      color: #8b949e;
+    }
+    .decision-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .decision {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 12px;
+    }
+    .decision-label {
+      font-size: 12px;
+      color: #8b949e;
+      margin-bottom: 8px;
+    }
+    .decision-options {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .decision-btn {
+      padding: 6px 12px;
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      color: #c9d1d9;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .decision-btn:hover {
+      border-color: #8b949e;
+    }
+    .decision-btn.selected {
+      background: #388bfd;
+      border-color: #388bfd;
+      color: #fff;
+    }
+    .prompt-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
+    }
+    .prompt-output {
+      flex: 1;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 12px;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      margin-bottom: 12px;
+    }
+    .copy-btn {
+      padding: 10px 16px;
+      background: #238636;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover { background: #2ea043; }
+    .copy-btn.copied { background: #388bfd; }
+
+    /* Comment modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      width: 400px;
+      max-width: 90vw;
+    }
+    .modal-header {
+      padding: 16px;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h3 { font-size: 16px; }
+    .modal-close {
+      background: none;
+      border: none;
+      color: #8b949e;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .modal-body { padding: 16px; }
+    .modal-body textarea {
+      width: 100%;
+      height: 120px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 12px;
+      color: #c9d1d9;
+      font-family: inherit;
+      font-size: 14px;
+      resize: vertical;
+    }
+    .modal-body textarea:focus {
+      outline: none;
+      border-color: #388bfd;
+    }
+    .modal-footer {
+      padding: 16px;
+      border-top: 1px solid #30363d;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .modal-btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .modal-btn.cancel {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+    }
+    .modal-btn.save {
+      background: #238636;
+      border: none;
+      color: #fff;
+    }
+
+    /* Tooltip */
+    .tooltip {
+      position: absolute;
+      background: #1c2128;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 12px;
+      max-width: 250px;
+      pointer-events: none;
+      z-index: 50;
+      display: none;
+    }
+    .tooltip.active { display: block; }
+    .tooltip-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .tooltip-comment {
+      color: #f0883e;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid #30363d;
+      font-style: italic;
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Content OS / Skill Stack Architecture</h1>
+    <div class="tabs">
+      <button class="tab active" data-view="architecture">Architecture</button>
+      <button class="tab" data-view="workflow">Workflow</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="canvas-container">
+      <canvas id="canvas"></canvas>
+      <div class="tooltip" id="tooltip">
+        <div class="tooltip-title"></div>
+        <div class="tooltip-desc"></div>
+        <div class="tooltip-comment"></div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-section">
+        <h3>Legend</h3>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div> Area</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#388bfd"></div> Project</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#a371f7"></div> System</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div> Tool</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Key Decisions</h3>
+        <div class="decision-list">
+          <div class="decision">
+            <div class="decision-label">File Organization</div>
+            <div class="decision-options">
+              <button class="decision-btn" data-decision="organization" data-value="folders">Deep Folders</button>
+              <button class="decision-btn" data-decision="organization" data-value="frontmatter">Frontmatter Tags</button>
+              <button class="decision-btn selected" data-decision="organization" data-value="hybrid">Hybrid</button>
+            </div>
+          </div>
+          <div class="decision">
+            <div class="decision-label">Structure Method</div>
+            <div class="decision-options">
+              <button class="decision-btn" data-decision="structure" data-value="para">Strict PARA</button>
+              <button class="decision-btn selected" data-decision="structure" data-value="custom">Custom (3 Areas)</button>
+            </div>
+          </div>
+          <div class="decision">
+            <div class="decision-label">Capture Mode</div>
+            <div class="decision-options">
+              <button class="decision-btn" data-decision="capture" data-value="always-on">Always-On</button>
+              <button class="decision-btn selected" data-decision="capture" data-value="intentional">Intentional Batch</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section" style="flex:1;overflow:hidden;display:flex;flex-direction:column;">
+        <h3>Tasks (click to prioritize, drag to reorder)</h3>
+        <div class="task-list" id="taskList"></div>
+      </div>
+
+      <div class="sidebar-section prompt-section">
+        <h3>Generated Prompt</h3>
+        <div class="prompt-output" id="promptOutput"></div>
+        <button class="copy-btn" id="copyBtn">Copy Prompt</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add Comment</h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="commentInput" placeholder="Add your thoughts, questions, or refinements..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn cancel" id="modalCancel">Cancel</button>
+        <button class="modal-btn save" id="modalSave">Save Comment</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+const state = {
+  view: 'architecture',
+  decisions: {
+    organization: 'hybrid',
+    structure: 'custom',
+    capture: 'intentional'
+  },
+  tasks: [
+    { id: 2, title: 'Design Content OS teaching architecture', priority: 1, status: 'pending', comment: '' },
+    { id: 5, title: 'Design vault structure (folders vs frontmatter)', priority: 1, status: 'pending', comment: '' },
+    { id: 3, title: 'Rework root CLAUDE.md as personal assistant', priority: 2, status: 'pending', comment: '' },
+    { id: 6, title: 'Create intentional capture system', priority: 2, status: 'pending', comment: '' },
+    { id: 4, title: 'Set up QMD for local RAG', priority: 3, status: 'pending', comment: '' },
+    { id: 7, title: 'Create url-to-markdown skill', priority: 3, status: 'pending', comment: '' },
+  ],
+  nodes: [],
+  comments: {},
+  hoveredNode: null,
+  selectedNode: null,
+  dragNode: null,
+  dragOffset: { x: 0, y: 0 }
+};
+
+// Architecture nodes
+const architectureNodes = [
+  // Areas (red)
+  { id: 'opened', label: 'OpenEd', type: 'area', x: 200, y: 150, desc: 'Salaried job - largest commitment. Podcast, newsletter, SEO, community.' },
+  { id: 'cia', label: 'Creative Intelligence\nAgency', type: 'area', x: 500, y: 150, desc: 'Other projects - both client work and personal publishing.' },
+  { id: 'personal', label: 'Personal', type: 'area', x: 800, y: 150, desc: 'True personal - family, faith, fitness. Not everything nests under CIA.' },
+
+  // Projects (blue)
+  { id: 'skillstack', label: 'Skill Stack', type: 'project', x: 400, y: 280, desc: 'Teaching agentic content creation. Course + community.' },
+  { id: 'contentos', label: 'Content OS', type: 'project', x: 550, y: 280, desc: 'The skill library and transformation engine.' },
+  { id: 'clientwork', label: 'Client Work', type: 'project', x: 700, y: 280, desc: 'Naval, Pause, other paying clients.' },
+
+  // Systems (purple)
+  { id: 'capture', label: 'Capture System', type: 'system', x: 250, y: 420, desc: 'Voice memos, notes, links. iCloud sync to inbox.' },
+  { id: 'vault', label: 'Vault Structure', type: 'system', x: 450, y: 420, desc: 'PARA-inspired but custom. Frontmatter + wikilinks.' },
+  { id: 'skills', label: 'Skills Library', type: 'system', x: 650, y: 420, desc: '93+ skills. AgentSkills-compatible format.' },
+
+  // Tools (green)
+  { id: 'claudecode', label: 'Claude Code', type: 'tool', x: 200, y: 550, desc: 'Primary agentic coding environment.' },
+  { id: 'cursor', label: 'Cursor/Zed', type: 'tool', x: 350, y: 550, desc: 'Alternative editors for teaching.' },
+  { id: 'qmd', label: 'QMD', type: 'tool', x: 500, y: 550, desc: 'Local RAG for token conservation.' },
+  { id: 'beehiiv', label: 'Beehiiv', type: 'tool', x: 650, y: 550, desc: 'Newsletter publishing.' },
+  { id: 'youtube', label: 'YouTube', type: 'tool', x: 800, y: 550, desc: 'Video publishing.' },
+];
+
+const architectureEdges = [
+  { from: 'cia', to: 'skillstack' },
+  { from: 'cia', to: 'contentos' },
+  { from: 'cia', to: 'clientwork' },
+  { from: 'skillstack', to: 'contentos', label: 'teaches' },
+  { from: 'contentos', to: 'skills' },
+  { from: 'capture', to: 'vault', label: 'feeds' },
+  { from: 'vault', to: 'skills', label: 'organizes' },
+  { from: 'skills', to: 'claudecode' },
+  { from: 'skills', to: 'cursor' },
+  { from: 'qmd', to: 'vault', label: 'indexes' },
+  { from: 'skills', to: 'beehiiv', label: 'publishes to' },
+  { from: 'skills', to: 'youtube', label: 'publishes to' },
+  { from: 'opened', to: 'contentos', label: 'uses', style: 'dashed' },
+];
+
+// Workflow nodes
+const workflowNodes = [
+  { id: 'source', label: 'SOURCE', type: 'system', x: 150, y: 200, desc: 'Transcripts, voice memos, RSS, notes - raw material.' },
+  { id: 'substance', label: 'SUBSTANCE', type: 'system', x: 350, y: 200, desc: 'Extract key ideas, angles, quotes.' },
+  { id: 'structure', label: 'STRUCTURE', type: 'system', x: 550, y: 200, desc: 'Apply format (newsletter, thread, blog post).' },
+  { id: 'style', label: 'STYLE', type: 'system', x: 750, y: 200, desc: 'Apply voice, brand, polish.' },
+
+  { id: 'podcast', label: 'Podcast\nTranscript', type: 'project', x: 100, y: 350, desc: 'Hub content - generates multiple spokes.' },
+  { id: 'voicememo', label: 'Voice\nMemo', type: 'project', x: 200, y: 350, desc: 'Quick capture - ideas, observations.' },
+
+  { id: 'newsletter', label: 'Newsletter', type: 'tool', x: 550, y: 450, desc: 'Daily/weekly publishing via Beehiiv.' },
+  { id: 'thread', label: 'Twitter\nThread', type: 'tool', x: 650, y: 450, desc: 'Social distribution on X.' },
+  { id: 'blogpost', label: 'Blog Post', type: 'tool', x: 750, y: 450, desc: 'SEO-optimized long-form.' },
+  { id: 'clips', label: 'Video\nClips', type: 'tool', x: 850, y: 450, desc: 'YouTube shorts, social video.' },
+];
+
+const workflowEdges = [
+  { from: 'source', to: 'substance', label: '1' },
+  { from: 'substance', to: 'structure', label: '2' },
+  { from: 'structure', to: 'style', label: '3' },
+  { from: 'podcast', to: 'source' },
+  { from: 'voicememo', to: 'source' },
+  { from: 'style', to: 'newsletter' },
+  { from: 'style', to: 'thread' },
+  { from: 'style', to: 'blogpost' },
+  { from: 'style', to: 'clips' },
+];
+
+const typeColors = {
+  area: '#f85149',
+  project: '#388bfd',
+  system: '#a371f7',
+  tool: '#3fb950'
+};
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const tooltip = document.getElementById('tooltip');
+
+function resize() {
+  const container = canvas.parentElement;
+  canvas.width = container.clientWidth;
+  canvas.height = container.clientHeight;
+  draw();
+}
+
+function getNodes() {
+  return state.view === 'architecture' ? architectureNodes : workflowNodes;
+}
+
+function getEdges() {
+  return state.view === 'architecture' ? architectureEdges : workflowEdges;
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const nodes = getNodes();
+  const edges = getEdges();
+
+  // Draw edges
+  edges.forEach(edge => {
+    const from = nodes.find(n => n.id === edge.from);
+    const to = nodes.find(n => n.id === edge.to);
+    if (!from || !to) return;
+
+    ctx.beginPath();
+    ctx.moveTo(from.x, from.y);
+    ctx.lineTo(to.x, to.y);
+    ctx.strokeStyle = edge.style === 'dashed' ? '#30363d' : '#484f58';
+    ctx.lineWidth = 2;
+    if (edge.style === 'dashed') ctx.setLineDash([5, 5]);
+    else ctx.setLineDash([]);
+    ctx.stroke();
+
+    // Arrow
+    const angle = Math.atan2(to.y - from.y, to.x - from.x);
+    const dist = Math.sqrt((to.x - from.x) ** 2 + (to.y - from.y) ** 2);
+    const arrowX = from.x + Math.cos(angle) * (dist - 45);
+    const arrowY = from.y + Math.sin(angle) * (dist - 45);
+
+    ctx.beginPath();
+    ctx.moveTo(arrowX, arrowY);
+    ctx.lineTo(arrowX - 10 * Math.cos(angle - 0.4), arrowY - 10 * Math.sin(angle - 0.4));
+    ctx.lineTo(arrowX - 10 * Math.cos(angle + 0.4), arrowY - 10 * Math.sin(angle + 0.4));
+    ctx.closePath();
+    ctx.fillStyle = '#484f58';
+    ctx.fill();
+
+    // Edge label
+    if (edge.label) {
+      const midX = (from.x + to.x) / 2;
+      const midY = (from.y + to.y) / 2;
+      ctx.font = '11px system-ui';
+      ctx.fillStyle = '#8b949e';
+      ctx.textAlign = 'center';
+      ctx.fillText(edge.label, midX, midY - 8);
+    }
+  });
+
+  // Draw nodes
+  nodes.forEach(node => {
+    const isHovered = state.hoveredNode === node.id;
+    const hasComment = state.comments[node.id];
+
+    // Node circle
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, isHovered ? 42 : 40, 0, Math.PI * 2);
+    ctx.fillStyle = typeColors[node.type];
+    ctx.globalAlpha = isHovered ? 1 : 0.85;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    // Comment indicator
+    if (hasComment) {
+      ctx.beginPath();
+      ctx.arc(node.x + 30, node.y - 30, 10, 0, Math.PI * 2);
+      ctx.fillStyle = '#f0883e';
+      ctx.fill();
+      ctx.font = 'bold 12px system-ui';
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('!', node.x + 30, node.y - 30);
+    }
+
+    // Node label
+    ctx.font = '12px system-ui';
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    const lines = node.label.split('\n');
+    lines.forEach((line, i) => {
+      const y = node.y + (i - (lines.length - 1) / 2) * 14;
+      ctx.fillText(line, node.x, y);
+    });
+  });
+}
+
+function getNodeAt(x, y) {
+  const nodes = getNodes();
+  for (let i = nodes.length - 1; i >= 0; i--) {
+    const node = nodes[i];
+    const dist = Math.sqrt((x - node.x) ** 2 + (y - node.y) ** 2);
+    if (dist < 40) return node;
+  }
+  return null;
+}
+
+canvas.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  if (state.dragNode) {
+    state.dragNode.x = x - state.dragOffset.x;
+    state.dragNode.y = y - state.dragOffset.y;
+    draw();
+    return;
+  }
+
+  const node = getNodeAt(x, y);
+  state.hoveredNode = node ? node.id : null;
+
+  if (node) {
+    tooltip.querySelector('.tooltip-title').textContent = node.label.replace('\n', ' ');
+    tooltip.querySelector('.tooltip-desc').textContent = node.desc;
+    const comment = state.comments[node.id];
+    const commentEl = tooltip.querySelector('.tooltip-comment');
+    if (comment) {
+      commentEl.textContent = 'Your note: ' + comment;
+      commentEl.style.display = 'block';
+    } else {
+      commentEl.style.display = 'none';
+    }
+    tooltip.style.left = (e.clientX - canvas.parentElement.getBoundingClientRect().left + 15) + 'px';
+    tooltip.style.top = (e.clientY - canvas.parentElement.getBoundingClientRect().top + 15) + 'px';
+    tooltip.classList.add('active');
+    canvas.style.cursor = 'pointer';
+  } else {
+    tooltip.classList.remove('active');
+    canvas.style.cursor = 'grab';
+  }
+
+  draw();
+});
+
+canvas.addEventListener('mousedown', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const node = getNodeAt(x, y);
+
+  if (node) {
+    state.dragNode = node;
+    state.dragOffset = { x: x - node.x, y: y - node.y };
+    canvas.style.cursor = 'grabbing';
+  }
+});
+
+canvas.addEventListener('mouseup', () => {
+  state.dragNode = null;
+  canvas.style.cursor = 'grab';
+});
+
+canvas.addEventListener('dblclick', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const node = getNodeAt(x, y);
+
+  if (node) {
+    openCommentModal(node.id, node.label.replace('\n', ' '));
+  }
+});
+
+// Task list
+const taskList = document.getElementById('taskList');
+
+function renderTasks() {
+  taskList.innerHTML = '';
+  state.tasks.forEach((task, idx) => {
+    const card = document.createElement('div');
+    card.className = 'task-card' + (task.comment ? ' selected' : '');
+    card.innerHTML = `
+      <div class="task-priority p${task.priority}" title="Click to change priority">${task.priority}</div>
+      <div class="task-content">
+        <div class="task-title">${task.title}</div>
+        <div class="task-status">${task.status}${task.comment ? ' - has note' : ''}</div>
+      </div>
+    `;
+
+    // Priority click
+    card.querySelector('.task-priority').addEventListener('click', (e) => {
+      e.stopPropagation();
+      task.priority = task.priority >= 3 ? 1 : task.priority + 1;
+      renderTasks();
+      updatePrompt();
+    });
+
+    // Card click for comment
+    card.addEventListener('click', () => {
+      openCommentModal('task-' + task.id, task.title, task.comment);
+    });
+
+    taskList.appendChild(card);
+  });
+}
+
+// Decisions
+document.querySelectorAll('.decision-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const decision = btn.dataset.decision;
+    const value = btn.dataset.value;
+    state.decisions[decision] = value;
+
+    document.querySelectorAll(`.decision-btn[data-decision="${decision}"]`).forEach(b => {
+      b.classList.toggle('selected', b.dataset.value === value);
+    });
+
+    updatePrompt();
+  });
+});
+
+// Tabs
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    state.view = tab.dataset.view;
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t === tab));
+    draw();
+  });
+});
+
+// Modal
+const modal = document.getElementById('modalOverlay');
+const modalTitle = document.getElementById('modalTitle');
+const commentInput = document.getElementById('commentInput');
+let currentCommentTarget = null;
+
+function openCommentModal(id, title, existingComment = '') {
+  currentCommentTarget = id;
+  modalTitle.textContent = 'Comment: ' + title;
+  commentInput.value = existingComment || state.comments[id] || '';
+  modal.classList.add('active');
+  commentInput.focus();
+}
+
+document.getElementById('modalClose').addEventListener('click', () => modal.classList.remove('active'));
+document.getElementById('modalCancel').addEventListener('click', () => modal.classList.remove('active'));
+document.getElementById('modalSave').addEventListener('click', () => {
+  const comment = commentInput.value.trim();
+  if (currentCommentTarget.startsWith('task-')) {
+    const taskId = parseInt(currentCommentTarget.replace('task-', ''));
+    const task = state.tasks.find(t => t.id === taskId);
+    if (task) task.comment = comment;
+  } else {
+    if (comment) state.comments[currentCommentTarget] = comment;
+    else delete state.comments[currentCommentTarget];
+  }
+  modal.classList.remove('active');
+  renderTasks();
+  draw();
+  updatePrompt();
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.classList.remove('active');
+});
+
+// Prompt generation
+const promptOutput = document.getElementById('promptOutput');
+
+function updatePrompt() {
+  const parts = [];
+
+  parts.push('Here\'s my current thinking on the Content OS / Skill Stack architecture:\n');
+
+  // Decisions
+  parts.push('## Decisions Made');
+  if (state.decisions.organization === 'hybrid') {
+    parts.push('- File organization: HYBRID approach - shallow folders for assets, frontmatter tags for notes with [[wikilinks]] that update on rename');
+  } else if (state.decisions.organization === 'frontmatter') {
+    parts.push('- File organization: FRONTMATTER-FIRST - flat files with project/area tags');
+  } else {
+    parts.push('- File organization: DEEP FOLDERS - traditional nested directory structure');
+  }
+
+  if (state.decisions.structure === 'custom') {
+    parts.push('- Structure: CUSTOM 3-area model (OpenEd / Creative Intelligence Agency / Personal) - NOT strict PARA');
+  } else {
+    parts.push('- Structure: STRICT PARA (Projects / Areas / Resources / Archives)');
+  }
+
+  if (state.decisions.capture === 'intentional') {
+    parts.push('- Capture mode: INTENTIONAL BATCH - process inbox at desk, no always-on heartbeat');
+  } else {
+    parts.push('- Capture mode: ALWAYS-ON - continuous background processing');
+  }
+
+  // Node comments
+  const nodeComments = Object.entries(state.comments).filter(([k]) => !k.startsWith('task-'));
+  if (nodeComments.length > 0) {
+    parts.push('\n## Architecture Notes');
+    nodeComments.forEach(([id, comment]) => {
+      const node = [...architectureNodes, ...workflowNodes].find(n => n.id === id);
+      if (node) {
+        parts.push(`- **${node.label.replace('\n', ' ')}**: ${comment}`);
+      }
+    });
+  }
+
+  // Tasks with priorities and comments
+  parts.push('\n## Task Priorities');
+  const p1 = state.tasks.filter(t => t.priority === 1);
+  const p2 = state.tasks.filter(t => t.priority === 2);
+  const p3 = state.tasks.filter(t => t.priority === 3);
+
+  if (p1.length) {
+    parts.push('**High Priority:**');
+    p1.forEach(t => {
+      parts.push(`- ${t.title}${t.comment ? ` (Note: ${t.comment})` : ''}`);
+    });
+  }
+  if (p2.length) {
+    parts.push('**Medium Priority:**');
+    p2.forEach(t => {
+      parts.push(`- ${t.title}${t.comment ? ` (Note: ${t.comment})` : ''}`);
+    });
+  }
+  if (p3.length) {
+    parts.push('**Lower Priority:**');
+    p3.forEach(t => {
+      parts.push(`- ${t.title}${t.comment ? ` (Note: ${t.comment})` : ''}`);
+    });
+  }
+
+  parts.push('\n---\nPlease update the plan based on these decisions and priorities. Focus on the high-priority items first.');
+
+  promptOutput.textContent = parts.join('\n');
+}
+
+// Copy button
+const copyBtn = document.getElementById('copyBtn');
+copyBtn.addEventListener('click', () => {
+  navigator.clipboard.writeText(promptOutput.textContent);
+  copyBtn.textContent = 'Copied!';
+  copyBtn.classList.add('copied');
+  setTimeout(() => {
+    copyBtn.textContent = 'Copy Prompt';
+    copyBtn.classList.remove('copied');
+  }, 2000);
+});
+
+// Init
+window.addEventListener('resize', resize);
+resize();
+renderTasks();
+updatePrompt();
+</script>
+</body>
+</html>

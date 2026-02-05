@@ -1,0 +1,76 @@
+# [Your Project Name] - Project Context
+
+> [One-line description of what this workspace is for]
+
+## Where Things Live
+
+| What | Location |
+|------|----------|
+| **Content** | `content/` |
+| **Drafts** | `drafts/` |
+| **Skills** | `.claude/skills/` |
+| **References** | `.claude/references/` |
+
+## Quick Reference
+
+| Key | Value |
+|-----|-------|
+| **Domain** | your-domain.com |
+| **Primary Platform** | [Newsletter/Blog/Podcast/YouTube] |
+| **Voice** | [Link to voice skill or description] |
+
+## About This Project
+
+[2-3 sentences about what this workspace produces and why it exists]
+
+## Skills Quick Reference
+
+| Task | Skill to Use |
+|------|--------------|
+| Any writing | `anti-ai-writing` |
+| Headlines/hooks | `hook-and-headline-writing` |
+| Transcripts | `transcript-polisher` |
+| Social posts | `social-content-creation` |
+| [Add your common tasks] | [Relevant skills] |
+
+## Writing Guidelines
+
+**ALWAYS load `skills/anti-ai-writing/SKILL.md` for any writing task.**
+
+Core principles:
+- No correlative constructions ("X isn't just Y - it's Z") - the #1 AI tell
+- 10th grade reading level. Vary sentence length. Fragments for punch.
+- Concrete over abstract. Specific over vague.
+- [Add your specific voice guidelines]
+
+## Content Types
+
+### [Content Type 1, e.g., "Blog Posts"]
+- Location: `content/blog/`
+- Skill: `ghostwriter`
+- Template: [link if applicable]
+
+### [Content Type 2, e.g., "Newsletter"]
+- Location: `content/newsletter/`
+- Skill: `[your-newsletter-skill]`
+- Schedule: [frequency]
+
+### [Content Type 3, e.g., "Social"]
+- Skill: `social-content-creation`
+- Platforms: [list platforms]
+
+## Key References
+
+- [VOICE.md](.claude/references/VOICE.md) - Your captured writing voice
+- [BRAND.md](.claude/references/BRAND.md) - Brand guidelines
+- [CONTENT_INDEX.md](.claude/references/CONTENT_INDEX.md) - Index of all content
+
+## The Author
+
+**[Your Name]** (@handle)
+- [Brief bio relevant to this workspace]
+- [What makes your perspective unique]
+
+---
+
+*This context file helps AI assistants understand the project. Update as the project evolves.*

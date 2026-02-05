@@ -1,0 +1,67 @@
+# Versions
+
+Version tracking for all Content OS skills.
+
+| Skill | Version | Last Updated | Changelog |
+|-------|---------|--------------|-----------|
+| algorithmic-art | 1.0.0 | 2026-02-04 | Initial release |
+| amazon-category-research | 1.0.0 | 2026-02-04 | Initial release |
+| anti-ai-writing | 1.0.0 | 2026-02-04 | Initial release |
+| article-titles | 1.0.0 | 2026-02-04 | Initial release |
+| brand-guidelines | 1.0.0 | 2026-02-04 | Initial release |
+| brand-identity-wizard | 1.0.0 | 2026-02-04 | Initial release |
+| canvas-design | 1.0.0 | 2026-02-04 | Initial release |
+| cold-open-creator | 1.0.0 | 2026-02-04 | Initial release |
+| create-interface | 1.0.0 | 2026-02-04 | Initial release |
+| daily-notes | 1.0.0 | 2026-02-04 | Initial release |
+| doc-coauthoring | 1.0.0 | 2026-02-04 | Initial release |
+| docx | 1.0.0 | 2026-02-04 | Initial release |
+| dude-with-sign-writer | 1.0.0 | 2026-02-04 | Initial release |
+| frontend-design | 1.0.0 | 2026-02-04 | Initial release |
+| ghostwriter | 1.0.0 | 2026-02-04 | Initial release |
+| hook-and-headline-writing | 1.0.0 | 2026-02-04 | Initial release |
+| how-newsletters | 1.0.0 | 2026-02-04 | Initial release |
+| human-writing | 1.0.0 | 2026-02-04 | Initial release |
+| image-prompt-generator | 1.0.0 | 2026-02-04 | Initial release |
+| invisible-threads | 1.0.0 | 2026-02-04 | Initial release |
+| local-markdown-search | 1.0.0 | 2026-02-04 | Initial release |
+| mcp-builder | 1.0.0 | 2026-02-04 | Initial release |
+| memo | 1.0.0 | 2026-02-04 | Initial release |
+| multi-source-research | 1.0.0 | 2026-02-04 | Initial release |
+| nano-banana-image-generator | 1.0.0 | 2026-02-04 | Initial release |
+| narrative-snippets | 1.0.0 | 2026-02-04 | Initial release |
+| notion-knowledge-capture | 1.0.0 | 2026-02-04 | Initial release |
+| notion-meeting-intelligence | 1.0.0 | 2026-02-04 | Initial release |
+| notion-research-documentation | 1.0.0 | 2026-02-04 | Initial release |
+| notion-spec-to-implementation | 1.0.0 | 2026-02-04 | Initial release |
+| pdf | 1.0.0 | 2026-02-04 | Initial release |
+| pdf-ocr | 1.0.0 | 2026-02-04 | Initial release |
+| podcast-blog-post-creator | 1.0.0 | 2026-02-04 | Initial release |
+| podcast-production | 1.0.0 | 2026-02-04 | Initial release |
+| podcast-wiki-pipeline | 1.0.0 | 2026-02-04 | Initial release |
+| pptx | 1.0.0 | 2026-02-04 | Initial release |
+| semantic-chunking-rules | 1.0.0 | 2026-02-04 | Initial release |
+| short-form-video | 1.0.0 | 2026-02-04 | Initial release |
+| skill-creator | 1.0.0 | 2026-02-04 | Initial release |
+| slack-gif-creator | 1.0.0 | 2026-02-04 | Initial release |
+| social-content-creation | 1.0.0 | 2026-02-04 | Initial release |
+| text-content | 1.0.0 | 2026-02-04 | Initial release |
+| theme-factory | 1.0.0 | 2026-02-04 | Initial release |
+| transcript-polisher | 1.0.0 | 2026-02-04 | Initial release |
+| ui-ux-pro-max | 1.0.0 | 2026-02-04 | Initial release |
+| vellum-prep | 1.0.0 | 2026-02-04 | Initial release |
+| video-caption-creation | 1.0.0 | 2026-02-04 | Initial release |
+| video-generator | 1.0.0 | 2026-02-04 | Initial release |
+| voice-analyzer | 1.0.0 | 2026-02-04 | Initial release |
+| voice-matching-wizard | 1.0.0 | 2026-02-04 | Initial release |
+| voice-wendell-berry | 1.0.0 | 2026-02-04 | Initial release |
+| voice-wizard | 1.0.0 | 2026-02-04 | Initial release |
+| web-artifacts-builder | 1.0.0 | 2026-02-04 | Initial release |
+| wiki-ontology-design | 1.0.0 | 2026-02-04 | Initial release |
+| writing-style | 1.0.0 | 2026-02-04 | Initial release |
+| x-article-converter | 1.0.0 | 2026-02-04 | Initial release |
+| xlsx | 1.0.0 | 2026-02-04 | Initial release |
+| youtube-clip-extractor | 1.0.0 | 2026-02-04 | Initial release |
+| youtube-downloader | 1.0.0 | 2026-02-04 | Initial release |
+| youtube-scriptwriting | 1.0.0 | 2026-02-04 | Initial release |
+| youtube-title-creator | 1.0.0 | 2026-02-04 | Initial release |

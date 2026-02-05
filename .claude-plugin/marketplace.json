@@ -1,0 +1,22 @@
+{
+  "name": "content-os",
+  "version": "1.0.0",
+  "description": "Open-source skills for content creators using Claude. 61 skills across writing, voice, video, design, and more.",
+  "author": "Charlie Deist",
+  "homepage": "https://github.com/cdeist/content-os",
+  "skills_directory": "skills",
+  "categories": [
+    "writing",
+    "voice",
+    "video-podcast",
+    "content-creation",
+    "research",
+    "automation",
+    "design",
+    "meta",
+    "document-generation",
+    "productivity"
+  ],
+  "skill_count": 61,
+  "license": "MIT"
+}

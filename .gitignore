@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+*.pyc
+__pycache__/
+
+# Environment
+.env
+.env.*
+*.env
+
+# Dependencies
+node_modules/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local config
+.env.local

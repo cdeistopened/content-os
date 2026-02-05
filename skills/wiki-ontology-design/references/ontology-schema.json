@@ -1,0 +1,35 @@
+{
+  "domains": [
+    {
+      "slug": "perception",
+      "title": "Perception",
+      "frameworks": ["two-movies", "confirmation-bias"]
+    }
+  ],
+  "frameworks": [
+    {
+      "slug": "two-movies",
+      "title": "Two Movies on One Screen",
+      "domain": "perception",
+      "aliases": ["two movies"],
+      "cases": ["charlottesville"],
+      "people": ["trump"]
+    }
+  ],
+  "cases": [
+    {
+      "slug": "charlottesville",
+      "title": "Charlottesville Press Conference",
+      "illustrates": ["two-movies"],
+      "people": ["trump"],
+      "episodes": []
+    }
+  ],
+  "people": [
+    {
+      "slug": "trump",
+      "title": "Donald Trump",
+      "aliases": ["President Trump"]
+    }
+  ]
+}
