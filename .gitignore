@@ -23,3 +23,14 @@ node_modules/
 
 # Local config
 .env.local
+
+# Browser state and virtual environments
+skills/research/notebooklm/data/browser_state/
+**/.venv/
+
+# Internal working docs
+findings.md
+progress.md
+task_plan.md
+HANDOFF.md
+tasks/

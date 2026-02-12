@@ -25,6 +25,7 @@ Requirements:
 import argparse
 import base64
 import os
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -283,7 +284,7 @@ Examples:
         )
         print(f"\nGenerated {len(paths)} images.")
     else:
-        generate_image(
+        path = generate_image(
             prompt=args.prompt,
             model=args.model,
             aspect_ratio=args.aspect,
@@ -291,6 +292,12 @@ Examples:
             name_prefix=args.name,
             input_image=args.input,
         )
+        paths = [path] if path else []
+
+    # Open all generated images in Preview
+    if paths:
+        print("Opening images in Preview...")
+        subprocess.run(["open"] + [str(p) for p in paths])
 
 
 if __name__ == "__main__":

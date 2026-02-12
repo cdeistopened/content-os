@@ -10,11 +10,23 @@ Use this template to structure your creative analysis and proposal phase.
 ## Core Message & Hooks
 
 ### Big Ideas (3-5)
-1. [Provocative takeaway #1]
-2. [Provocative takeaway #2]
-3. [Provocative takeaway #3]
-4. [Optional: #4]
-5. [Optional: #5]
+
+For each Big Idea, include a **TAM score (1-10)** rating its Total Addressable Market. Which angles appeal only to your existing niche? Which could reach a broader audience? Prioritize reach alongside quality.
+
+| # | Big Idea | TAM (1-10) | Why |
+|---|----------|-----------|-----|
+| 1 | [Provocative takeaway #1] | /10 | [Who cares about this beyond your niche?] |
+| 2 | [Provocative takeaway #2] | /10 | |
+| 3 | [Provocative takeaway #3] | /10 | |
+| 4 | [Optional: #4] | /10 | |
+| 5 | [Optional: #5] | /10 | |
+
+**TAM scoring guide:**
+- **9-10**: Any parent (or any person) would care. No niche filter.
+- **7-8**: Most parents would be curious, not just your core audience.
+- **5-6**: Broad within your niche (e.g., all homeschoolers, not just classical).
+- **3-4**: Niche-specific. Enthusiasts only.
+- **1-2**: Ultra-niche. Insiders only.
 
 ### Key Questions Answered
 - [Question 1 this episode addresses]

@@ -5,7 +5,7 @@
   "author": "Charlie Deist",
   "repository": "github.com/cdeistopened/content-os",
   "stats": {
-    "totalSkills": 93,
+    "totalSkills": 94,
     "categories": 13
   },
   "categories": {
@@ -138,6 +138,7 @@
       "description": "Personal productivity and review skills",
       "skills": [
         "bird",
+        "find-your-margin",
         "gog",
         "pre-mortem",
         "remindctl",

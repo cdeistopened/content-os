@@ -23,6 +23,40 @@ Use this skill when you need to:
 - Social media captions (use `social-caption-writer` instead)
 - Newsletter subject lines (use `hook-and-headline-writing` instead)
 
+---
+
+## Channel Size Strategy (Critical Context)
+
+**Before generating titles, determine channel size tier.** The right strategy depends on audience scale.
+
+### Tier 1: Growing Channels (<100K subscribers)
+- **Topic carries the title, NOT the guest.** Nobody knows your guest. "Neuroscientist" helps; "Dr. Claire Honeycutt" does not.
+- **Use credentials as adjectives, not proper nouns.** "A neuroscientist's warning about..." beats "Dr. Claire Honeycutt on..."
+- **Guest name goes in the description**, not the title. Exception: guest is genuinely famous (1M+ followers, household name).
+- **Lead with the viewer's problem or curiosity**, not the guest's resume.
+- **Universalize aggressively.** Remove every word that filters out potential viewers.
+
+### Tier 2: Established Channels (100K-1M subscribers)
+- Guest credentials in title can work if genuinely impressive ("Former Navy SEAL," "Billionaire")
+- Guest name still goes in description unless they have independent fame
+- Topic still leads, but authority framing helps ("According to Neuroscience")
+
+### Tier 3: Large Channels (1M+ subscribers)
+- Creator's brand carries the title. Guest name adds value if famous.
+- Can afford niche titles because base audience is large enough.
+
+### Podcast-Specific Title Guidance
+
+Podcast episodes have unique challenges. The content is a conversation — not a produced video with B-roll. This means:
+
+1. **Extract the single most provocative claim from the conversation.** Don't describe the conversation; sell the most surprising thing said in it.
+2. **The title should make the viewer feel they're about to learn something urgent**, not that they're about to watch two people talk.
+3. **Avoid "interview format" titles** like "Guest Name on Topic" or "Topic with Guest Name" — these telegraph "talking heads" and get skipped.
+4. **Reframe the guest's insight as a discovery, warning, or challenge.**
+   - Descriptive (weak): "What a Neuroscientist's Homeschool Looks Like"
+   - Provocative (strong): "Your Child's Brain Can Do This at 8 — But NOT at 25"
+5. **Test whether the title would work for a produced video, not just an interview.** If it only makes sense as a podcast title, it's too weak.
+
 ## Key Principles
 
 ### The Framework Fitting Method
@@ -284,12 +318,27 @@ For each title variation, check which principles it triggers:
 - **Dial to 11:** "Most extreme version of that title?"
 - **Simplify text:** Fewer words, higher contrast, more charged
 
+**Thumbnail Anti-Patterns (Especially for Podcasts):**
+- **NEVER use a podcast recording screenshot as thumbnail.** Two unknown faces in earbuds/mics = instant skip. This is the #1 podcast thumbnail mistake.
+- **NEVER use the guest's face alone** unless they're famous. An unknown face with text overlay says "skip."
+- **NEVER make the thumbnail text a quote from the episode.** Quotes require context. Thumbnails must work instantly.
+- **NEVER use more than 4 words of text.** If the thumbnail needs explaining, it fails.
+
+**What Podcast Thumbnails SHOULD Show:**
+- **The concept, not the conversation.** If the episode is about removing TV from the home → show a living room with books where the TV should be.
+- **Visual contrast or transformation.** Split images (before/after, vs., choice between two things) outperform single-scene thumbnails.
+- **Props, environments, or situations** that tell the story without faces.
+- **If you must use a face:** Show genuine emotion (shock, concern, joy) — not a neutral "podcast smile."
+
 **Thumbnail Text Formulas:**
 - "Here's how"
 - "Number 3 will shock you"
 - "This changed everything"
 - "Schools are wrong"
 - "CRAZY"
+- "USE IT OR LOSE IT"
+- "BEFORE → AFTER"
+- "STOP DOING THIS"
 - Question: "Is that even allowed?"
 
 #### Step 3: Quality Test All Title Variations
@@ -421,12 +470,16 @@ Create file: `[Video_Topic]_YouTube_Titles_Thumbnails.md`
 ❌ **Insufficient volume** - Testing only 2-3 frameworks
 ❌ **Ignoring Hook Scores** - Not prioritizing proven performers
 ❌ **Over-filtering** - Adding too many audience limiters
+❌ **Descriptive over provocative** - "What X Looks Like" describes content; "Your Brain Can Do This at 8 But NOT at 25" provokes emotion. Always ask: does this title describe or provoke?
+❌ **Leading with unknown guest name** - Guest names are only hooks if the guest is famous. Use credentials as adjectives instead.
 
 ### Phase 3 Issues
 ❌ **Thumbnail repetition** - Title and thumbnail say same thing
 ❌ **Failing McDonald's Test** - Using jargon or complexity
 ❌ **Single variation** - Not creating A/B test options
 ❌ **Low principle count** - Triggering only 1-2 psychological levers
+❌ **Podcast screenshot thumbnails** - Two faces in mics/earbuds is the lowest-performing thumbnail archetype. Show the concept, not the conversation.
+❌ **Quote-as-thumbnail-text** - Episode quotes need context. Thumbnail text must land instantly without context ("USE IT OR LOSE IT" beats "TV'S NOT WHO WE ARE").
 
 
 ---
@@ -466,6 +519,14 @@ Flip the expected outcome:
 ---
 
 ## Version History
+
+- **v1.1** (2026-02-12): Channel-size strategy & podcast-specific guidance
+  - Added Channel Size Strategy section (Tier 1/2/3) — topic carries title for small channels, not guest name
+  - Added Podcast-Specific Title Guidance — extract provocative claims, avoid interview-format titles
+  - Added Thumbnail Anti-Patterns for podcasts — never use podcast screenshots, never use episode quotes as thumbnail text
+  - Added "descriptive vs provocative" pitfall — titles must provoke emotion, not describe content
+  - Added new thumbnail text formulas (USE IT OR LOSE IT, BEFORE → AFTER, STOP DOING THIS)
+  - Synced updates to podcast-production skill (Checkpoint 3) and checkpoint-3-template
 
 - **v1.0** (2025-10-28): Initial skill creation
   - Framework fitting method from social-content-creation

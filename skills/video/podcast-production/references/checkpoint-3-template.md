@@ -19,13 +19,29 @@ A single document containing:
 ## CHECKPOINT 3 OUTPUT FORMAT
 
 ### Title
-**[Guest Name]: [Bold Claim or Statistic] ([Surprising Element])**
 
-**Guidelines:**
-- Include guest name for authority
-- Lead with strongest hook (stat, question, or bold claim)
+**Guidelines (choose format based on channel size):**
+
+**For channels <100K subs:**
+- **[Provocative Claim or Warning] ([Surprising Element])**
+- Do NOT lead with guest name. Use credentials as adjectives if needed.
+- Lead with the viewer's problem, curiosity, or urgency — not the guest's resume.
+- Example: "Your Child's Brain Can Do This at 8 — But NOT at 25" (not "Dr. Claire Honeycutt: What Neuroscience Says About Learning")
+- Guest name goes in description, not title.
+
+**For channels 100K-1M subs:**
+- **[Credential]: [Bold Claim] ([Surprising Element])**
+- Credentials in title if genuinely impressive. Guest name in description.
+
+**For channels 1M+ subs:**
+- **[Guest Name]: [Bold Claim or Statistic] ([Surprising Element])**
+- Guest name adds value when channel has large base audience.
+
+**Universal rules:**
 - 60-70 characters (optimized for YouTube search)
 - Include 1-2 keywords relevant to your topic
+- Ask: does this title DESCRIBE the content or PROVOKE curiosity? Always provoke.
+- The title should work for a produced video, not just an interview.
 
 ---
 
@@ -40,6 +56,9 @@ A single document containing:
 - Text: 2-4 words maximum
 - Avoid redundancy with title (thumbnail and title should complement, not repeat)
 - Make thumbnail readable on mobile (assume 280px width)
+- **NEVER use a podcast recording screenshot** (two faces in mics = instant skip)
+- **Show the concept, not the conversation** — use visual metaphors, contrast, environments
+- **Thumbnail text must land instantly without episode context** ("USE IT OR LOSE IT" beats "TV'S NOT WHO WE ARE")
 
 ---
 
@@ -187,8 +206,8 @@ SPEAKER: [Full verbatim transcript]
 The following sections are guidelines for creating Checkpoint 3 - do NOT include quality gates, decision points, or meta-commentary in the actual deliverable. The Checkpoint 3 output should be a clean, actionable document ready for video production handoff.
 
 **Guidelines to follow (but not output):**
-- Title should include guest name and communicate core insight
-- Thumbnail: 2-4 words max, not redundant with title
+- Title should provoke curiosity and communicate core insight (guest name only for large channels or famous guests)
+- Thumbnail: 2-4 words max, not redundant with title, NOT a podcast screenshot
 - Chapters: 8-10 max, "My First Million" style (punchy, curiosity-driven)
 - All clips verbatim, cold open ends with cliffhanger
 - Description opens with hook sentence

@@ -42,15 +42,12 @@ open content-os-architecture.html
 qmd collection add . --name content-os --mask "**/*.md"
 ```
 
-## Related Projects
+## Origin
 
-- **Skill Stack** (`../skill-stack/`) - Web app for the course
-- **Skill Stack Studio** (`../skill-stack-studio/`) - Content planning
+This is the open-source skill library from the [Skill Stack](https://skillstack.ai) blog, packaged for standalone use.
 
 ## Current Status
 
-- Skills organized and cataloged
+- 135+ skills organized across 13 categories
 - Install script ready
-- Consolidated from standalone + skill-stack/content-os copies
-
-See `HANDOFF.md` for full context and next steps.
+- Manifest cataloging all skills

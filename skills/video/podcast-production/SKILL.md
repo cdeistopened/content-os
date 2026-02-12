@@ -43,8 +43,9 @@ Transform a raw podcast transcript into polished, multi-platform content assets 
 - Surprising Points (contradictions with common belief)
 - Quote Bank (organized verbatim quotes)
 - Social Clip Highlights (5-6 potential clips)
+- **TAM Assessment**: For each Big Idea, rate its Total Addressable Market (1-10). Which angles appeal only to the existing niche audience? Which could reach anyone with kids? Which would make a non-parent stop scrolling? Prioritize broad-appeal angles over niche-specific ones. A Big Idea that only homeschool parents care about scores 3; a Big Idea that every parent with a child under 12 cares about scores 8.
 
-**User decision point**: Which Big Idea is strongest?
+**User decision point**: Which Big Idea is strongest? (Consider both quality AND reach.)
 
 **Reference**: See `references/checkpoint-1-template.md` for detailed template
 
@@ -90,12 +91,23 @@ Transform a raw podcast transcript into polished, multi-platform content assets 
 **Your deliverable**: `Checkpoint_3_YouTube_Strategy.md`
 
 **What it contains**:
-- Final YouTube title (with guest name for authority)
-- Thumbnail specification (2-4 words max, minimal design)
+- Final YouTube title (see channel-size rules below)
+- Thumbnail specification (2-4 words max, minimal design — NOT a podcast screenshot)
 - YouTube description (opening hook sentence + full description + resources + chapters)
 - Cold open script (verbatim clips)
 - All 3 approved social clips with on-screen hooks
 - Chapter breakdown (5-10 words per chapter title, keyword-rich)
+
+**Title strategy by channel size:**
+- **<100K subs**: Topic carries the title. Use guest credentials as adjectives ("A Neuroscientist's Warning..."), NOT guest names. Guest name goes in description only.
+- **100K-1M subs**: Credentials in title if impressive. Guest name still in description unless independently famous.
+- **1M+ subs**: Creator brand carries. Guest name adds value if famous.
+- **Always ask**: Does this title describe the content, or provoke curiosity? Descriptive titles ("What X Looks Like") lose to provocative titles ("Your Brain Can Do This at 8 But NOT at 25").
+
+**Thumbnail rules for podcast episodes:**
+- NEVER use a podcast recording screenshot (two faces in mics = instant skip)
+- Show the concept, not the conversation — use visual metaphors, contrast, environments
+- Thumbnail text must land without any context from the episode
 
 **Skills used**:
 - **youtube-title-creator**: For YouTube title strategy
@@ -235,10 +247,12 @@ All outputs should reflect your brand's visual and tonal guidelines. Your target
 
 ### Before Checkpoint 3 -> Checkpoint 4:
 **Is the strategy aligned?**
-- YouTube title clearly communicates core finding?
-- Title includes guest name for authority?
+- YouTube title provokes curiosity (not just describes content)?
+- Title uses guest credentials appropriately for channel size (see channel-size rules)?
 - Thumbnail is simple (2-4 words only)?
+- Thumbnail shows concept/emotion (NOT a podcast recording screenshot)?
 - Thumbnail visual is complementary (not redundant with title)?
+- Thumbnail text lands instantly without episode context?
 - Description hook is compelling (1 sentence)?
 - Chapter titles are 5-10 words (keyword-rich, compelling)?
 - All resources/links are correct?
