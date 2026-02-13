@@ -6,6 +6,9 @@ Thumbs.db
 *.pyc
 __pycache__/
 
+# Generated output
+**/output/
+
 # Environment
 .env
 .env.*

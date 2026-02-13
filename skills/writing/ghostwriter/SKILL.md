@@ -1,334 +1,186 @@
 ---
 name: ghostwriter
-description: Master the art of converting source material into authentic, human-written content. Transform transcripts, notes, and research into polished prose that avoids AI tells while maintaining distinctive voice. Combines anti-AI writing fundamentals with voice style adaptation.
+description: Transform source material into authentic, human-written content. Use for ANY writing task - newsletters, articles, social posts, emails. Combines voice transformation, AI pattern detection, and Charlie Deist's signature moves. Replaces the old ai-tells and human-writing skills.
 ---
 
-# Ghostwriter Skill
+# Ghostwriter
 
-## Purpose
+Transform source material into authentic prose that reads like a real person wrote it.
 
-This skill transforms source material - transcripts, notes, research, interviews - into authentic, human-written content that reads naturally without obvious AI tells. It extends the anti-ai-writing skill by adding voice adaptation and source material conversion techniques.
-
-**Core Philosophy:** The best ghostwriting is invisible. Readers should feel like they're reading a real person's thoughts, not a filtered or processed version of source material.
-
-**This skill assumes you've read the anti-ai-writing skill.** It builds on those fundamentals with additional techniques for voice adaptation and source material conversion.
-
-## When to Use This Skill
-
-Use the Ghostwriter skill when:
-- Converting transcripts or interviews into polished articles or newsletters
-- Refining notes into publishable content
-- Converting source material into different voices or styles
-- Building content that maintains a distinctive, personal voice
-- Adapting writing to match a specific author's style
-
-**Use in conjunction with:**
-- anti-ai-writing skill for core humanization patterns
-- Voice style profiles for adapting to specific voices
-- Source material that needs authentic conversion
-- brand-identity-wizard profile for brand voice consistency
+**This is the single writing quality skill.** It replaces `ai-tells` and `human-writing`. Load this for any writing task.
 
 ---
 
-## The 8 Human Desires Framework
+## The One Rule
 
-Great writing taps into core human desires. Choose 1-2 per piece:
+**Never use the correlative construction.** This is the #1 AI tell:
+- "X isn't just Y - it's Z"
+- "It's not about X, it's about Y"
+- "More than just X, it's Y"
 
-### 1. Safety of Tribe
-**Belonging, community, fitting in**
-- "The hidden skills that separate successful people from struggling ones"
-- Use when: Readers need to feel part of something larger
-
-### 2. Survival & Success
-**Progress, achievement, security**
-- "The greatest threat to your potential is getting tied down too early"
-- Key phrases: "breakthrough," "advancement," "finally," "unlocked"
-
-### 3. Life Enjoyment
-**Pleasure, experiences, freedom**
-- "Why most people miss the best parts of their work"
-- Key phrases: "savor," "freedom," "experience," "joy"
-
-### 4. Social Acceptance
-**Status, respect, recognition**
-- "What successful people know that average people don't"
-- Key phrases: "elite," "leaders know," "insiders understand"
-
-### 5. Sexual Companionship
-**Connection, attraction, intimacy**
-- (Less relevant for business content, but understand it exists)
-
-### 6. Comfort & Clarity
-**Simplicity, ease, certainty**
-- "The one question that eliminates decision paralysis"
-- Key phrases: "simple," "easy," "finally understand"
-
-### 7. Freedom From Fear
-**Safety, protection, security**
-- "How to protect yourself from predatory practices"
-- Key phrases: "protect," "avoid," "defend," "safe"
-
-### 8. Perceived Status
-**Respect, authority, expertise**
-- "Discover what MIT researchers just learned"
-- Key phrases: "breakthrough," "discovered," "research shows"
-
-**Application:** Identify which desire(s) your content taps into. Lean into them deliberately.
+Find another way. State the thing directly.
 
 ---
 
-## Voice Style Adaptation
+## Forbidden Patterns (Quick Reference)
 
-The ghostwriter can adapt content to different voice styles. Choose based on your content needs:
+These are immediate flags. Full list: `references/forbidden-patterns.md`
 
-### Authentic Conversational Style
-**Best for:** Calling out obvious truths, challenging conventional wisdom
+**Constructions:** "The truth is..." / "Now more than ever..." / "No fluff. No filler. Just results."
 
-**Characteristics:**
-- Direct, no-nonsense communication
-- Uses contrarian framing
-- Challenges mainstream narratives
-- Conversational but substantive
-- No hedging or corporate speak
+**Rhetorical flourishes:** "The best part? ..." / "Here's the thing..." / "Sound familiar?" / "What if I told you..."
 
-**Example tone:**
-- "Everyone says X. They're wrong. Here's why."
-- "The thing nobody wants to admit is..."
+**Openers:** "In today's fast-paced..." / "In the ever-evolving..." / "Gone are the days..." / "Let's dive in..."
 
-### Analytical Enthusiasm Style
-**Best for:** Explaining trends, making smart analysis exciting
+**Staccato fragments:** "Simple. Clear. Effective." / Short. Choppy. Sentences. Like. This.
 
-**Characteristics:**
-- Enthusiastic about ideas and trends
-- Makes complex ideas accessible
-- Uses analogies and mental models
-- Balances depth with readability
-- Injects energy into dry topics
+**Triple adjectives:** "Fast, efficient, reliable" - AI groups everything in threes.
 
-**Example tone:**
-- "This is fascinating because..."
-- "Let's break down why this matters..."
+**AI vocabulary:** delve, comprehensive, crucial, vital, leverage, landscape, navigate, foster, facilitate, realm, paradigm, embark, journey, tapestry, myriad, multifaceted, seamless, cutting-edge, supercharge, skyrocket, unlock
 
-### Discovery by Deletion Style
-**Best for:** Refining and polishing, limited word count
+**Thesaurus abuse:** utilize (use), implement (start), optimize (improve), facilitate (help)
 
-**Characteristics:**
-- Maximum impact per word
-- Ruthless editing
-- Clarity through brevity
-- Every sentence earns its place
-- No filler or padding
+**Hedging:** might/could/perhaps/possibly, "It's worth noting...", "It could be argued..."
 
-**Example approach:**
-- First draft: 500 words
-- Final version: 200 words with same impact
-- Cut anything that doesn't directly serve the reader
-
-### Decision Framework Style
-**Best for:** Helping readers think through tradeoffs
-
-**Characteristics:**
-- Reframes risk and decisions
-- Focuses on asymmetric bets
-- Provides mental models
-- Helps readers see situations differently
-- Practical, actionable insight
-
-**Example tone:**
-- "The real question isn't X, it's Y"
-- "Most people optimize for the wrong thing"
+**Empty enthusiasm:** "Absolutely!", "Great question!", "You're absolutely right!"
 
 ---
 
-## The Ghostwriting Workflow
+## Format Constraints
 
-### Step 1: Understand Your Source Material
+- **Dashes:** hyphens with spaces - like this - not em dashes
+- **No emojis** in body content
+- **No bold** for emphasis within paragraphs (bold is for headers/labels only)
+- **No** "In conclusion" or "In summary"
+- Limit transitions to: but, and, so, then, because. Remove: furthermore, moreover, additionally.
 
-Read through everything completely:
+---
+
+## Charlie's Signature Moves
+
+When writing in Charlie's voice or for OpenEd:
+
+1. **Aphoristic Opening** - Thesis as proverb
+   - "A vigorous life is the best training for a 50-mile march."
+
+2. **Personal-to-Universal Bridge** - Start specific, expand to cultural/historical commentary, return with new meaning
+
+3. **Intellectual Name-Drop (Earned)** - Reference thinkers only when directly relevant. Always explain why.
+
+4. **Contrarian Hook** - Challenge received wisdom without edgelording
+   - "In 99% of cases of chronic sedentarism, the inactive person is not lazy. They're bored."
+
+5. **Incarnational Detail** - Specific, sensory, grounding
+   - RFK walking in "leather Oxford dress shoes"
+
+6. **Self-Deprecating Confession** - Prevents preachiness, builds trust
+   - "I write this admonition as someone who often scrolls Twitter on the couch"
+
+**Target tone:** A coach who has done the thing and believes you can too. A friend who tells you the truth because he respects you. A fellow traveler, slightly ahead on the path.
+
+---
+
+## The Workflow
+
+### Step 1: Understand Source
+
 - What's the core insight or story?
 - What's the emotional arc?
-- What's the most important takeaway?
+- What's the 30-second version?
 
-**Ask yourself:**
-- [ ] What's being said that no one else is saying?
-- [ ] What will readers think, feel, or do differently?
-- [ ] What's the 30-second version of this?
+### Step 2: Apply SUCKS Framework
 
-### Step 2: Apply the SUCKS Framework
+**S** - Specific: Write for ONE person
+**U** - Unique & Useful: Does this change how they think, feel, or act?
+**C** - Clear, Curious, Conversational: Reads like talking to a friend
+**K** - Kept Simple & Structured: Simple ideas, clear progression
+**S** - Sticky: Memorable phrases they'll repeat
 
-Before writing:
-- [ ] Who is my ONE reader?
-- [ ] Is this unique and useful to them?
-- [ ] Can I make it clear, curious, and conversational?
-- [ ] How do I keep it simple and structured?
-- [ ] What will stick with them?
+Full reference: `references/sucks-framework.md`
 
-### Step 3: Choose Your Voice Style
+### Step 3: Write or Edit
 
-Select how to adapt the material:
-- Authentic Conversational - for challenging wisdom
-- Analytical Enthusiasm - for explaining trends
-- Discovery by Deletion - for maximum impact
-- Decision Framework - for helping with tradeoffs
-- Default (Professional) - for business/default writing
+If editing AI output: **Rewrite, don't patch.** Identify the core message and reconstruct from scratch.
 
-Or create a custom voice profile using the voice-analyzer skill.
+### Step 4: Apply Sticky Sentences
 
-### Step 4: Identify Human Desires
+Identify 2-3 most important statements. Try alliteration, symmetry, contrast, rhyme, or rhythm. Combine for maximum stickiness. Full reference: `references/sticky-sentences-expanded.md`
 
-Which 1-2 desires does this content tap into?
-- Safety of Tribe (belonging)
-- Survival & Success (achievement)
-- Life Enjoyment (pleasure)
-- Social Acceptance (status)
-- Comfort & Clarity (simplicity)
-- Freedom From Fear (protection)
-- Perceived Status (expertise)
+### Step 5: Eliminate AI Tells
 
-Lean into these deliberately throughout the piece.
-
-### Step 5: Convert Source Material
-
-Draft your content:
-1. Extract key quotes and ideas from source material
-2. Translate them into your chosen voice
-3. Structure with clear beginning, middle, end
-4. Use specific examples, numbers, and concrete details
-5. Create energy transfer (conversation, not lecture)
-6. Apply human desire framing throughout
-
-### Step 6: Apply Sticky Sentences
-
-Identify 2-3 most important statements and strengthen them:
-- Add alliteration, symmetry, contrast, or rhythm
-- Make them quotable
-- Make them memorable
-
-**Techniques:**
-- Alliteration: "Specificity is the secret"
-- Symmetry: "Read for awareness. Write for understanding."
-- Contrast: "To be everywhere is to be nowhere."
-- Rhyme: "Tell a story or lose your glory"
-
-### Step 7: Eliminate AI Tells
-
-Go through systematically and remove (reference anti-ai-writing skill):
-- [ ] Correlative constructions ("X aren't just Y, they're Z")
-- [ ] Overuse of "just" and "actually"
-- [ ] Hedge words (might, could, perhaps, seems)
+Scan against `references/forbidden-patterns.md`. Key checks:
+- [ ] Correlative constructions
+- [ ] "Just" and "actually" more than once
+- [ ] Hedge words (might, could, perhaps)
 - [ ] Passive voice
-- [ ] Corporate jargon
-- [ ] Vague language (replace with specifics)
-- [ ] Forbidden patterns
-- [ ] Too many transitions
-- [ ] Overcomplicated sentences
+- [ ] Corporate jargon / thesaurus abuse
+- [ ] Vague claims without specifics
+- [ ] Forbidden flourishes and openers
 
-**Test for each sentence:** Would this sentence appear in a ChatGPT output? If yes, rewrite it.
+### Step 6: Read Aloud
 
-### Step 8: Read Aloud & Quality Check
+- Does it sound like a real person talking?
+- Does energy transfer (conversation, not lecture)?
+- Is every sentence earning its place?
 
-Read your entire piece aloud:
-- [ ] Does it sound like a real person talking?
-- [ ] Could I send this to someone without embarrassment?
-- [ ] Does energy transfer (not feel formal)?
-- [ ] Is every sentence earning its place?
-- [ ] Do important ideas have sticky phrasing?
-- [ ] Are there obvious AI tells remaining?
-- [ ] Does it match the intended voice style?
-- [ ] Does it tap into the intended human desires?
+**The final test:** Would this sentence appear in a ChatGPT output? If yes, rewrite it.
 
 ---
 
-## Elements of Effective Ghostwritten Content
+## Writing Fundamentals
 
-When converting source material, include:
+### Energy Transfer
 
-1. **Capture attention immediately** - First sentence must hook
-2. **Use specific numbers** - "1.5 million" not "many"
-3. **Employ pattern interrupts** - Surprise the reader
-4. **Address problems directly** - Name the struggle
-5. **Write with confidence** - Eliminate hedge words
-6. **Highlight concrete benefits** - "Double output in 30 days" not "boost productivity"
-7. **Include social proof when relevant** - Results, credentials, validation
-8. **Ask powerful questions** - Make readers think
-9. **Incorporate warnings** - Create urgency, show stakes
-10. **Remind, don't just inform** - Confirm what readers already sense
+The best writing is a transfer of energy from writer to reader. Write conversations, not speeches. Speak WITH your audience, not AT them.
 
----
+### Conciseness
 
-## Common Pitfalls to Avoid
+Every word earns its place. Write first draft freely, then delete anything that repeats, softens, sounds formal, or takes extra words.
 
-### 1. Over-Processing Source Material
-**Bad:** Turning a natural conversation into corporate-speak
-**Good:** Preserving the authentic voice while polishing
+### Be Undeniable
 
-### 2. Adding AI-like Phrases
-**Bad:** "It's important to note that..." "Moreover..." "Furthermore..."
-**Good:** Direct communication with natural transitions
+Transform vague claims into concrete specifics:
+- Bad: "We've helped many clients"
+- Good: "We helped 13 clients boost traffic by 87%-256% in one month"
 
-### 3. Losing the Original Insight
-**Bad:** Adding so much polish that the core idea disappears
-**Good:** Enhancing clarity while preserving original meaning
+### Leverage Human Desires
 
-### 4. Sounding Generic
-**Bad:** Making content that could be about anything
-**Good:** Making it specific to one person's perspective
+Choose 1-2 per piece:
 
-### 5. Hedging Your Conviction
-**Bad:** "It might be possible that..." "Some experts say..."
-**Good:** "This is true because..." "We know..."
+| Desire | Use When |
+|--------|----------|
+| Safety of Tribe | Community content |
+| Survival & Success | Achievement content |
+| Life Enjoyment | Lifestyle content |
+| Social Acceptance | Status content |
+| Comfort & Clarity | Explanatory content |
+| Freedom From Fear | Protective content |
 
-### 6. Missing the Human Desire
-**Bad:** Content that doesn't tap into any deep motivation
-**Good:** Content that clearly connects to belonging, success, clarity, etc.
+Full reference: `references/human-desires.md`
 
 ---
 
-## Quality Checklist
+## Voice References
 
-Before finalizing ghostwritten content:
-
-**Source Material:**
-- [ ] Core insight clearly identified
-- [ ] Key quotes extracted
-- [ ] Emotional arc understood
-
-**Voice:**
-- [ ] Voice style selected and applied consistently
-- [ ] Energy transfer achieved (conversation, not lecture)
-- [ ] Matches intended author's style
-
-**Human Desires:**
-- [ ] 1-2 desires identified
-- [ ] Desires woven throughout the piece
-- [ ] Reader motivation is clear
-
-**Sticky Sentences:**
-- [ ] 2-3 key statements strengthened
-- [ ] Techniques applied (alliteration, symmetry, contrast, etc.)
-- [ ] Memorable and quotable
-
-**Anti-AI:**
-- [ ] All forbidden patterns eliminated
-- [ ] Hedge words removed
-- [ ] Vague claims made specific
-- [ ] Reads as genuinely human
-
-**Final Check:**
-- [ ] Read aloud - sounds natural
-- [ ] Every sentence earns its place
-- [ ] Would send to anyone without embarrassment
+For adapting to specific styles, read these for the vibe:
+- `references/pirate-wires-style.md` + `pirate-wires-examples.md` - Contrarian, calling out truths
+- `references/packy-mccormick-style.md` - Trends, accessible analysis
+- `references/justin-mikolay-style.md` - Discovery by deletion, refining
+- `references/one-thing-better-style.md` - Decisions, tradeoffs
 
 ---
 
-## Related Skills
+## References
 
-- **anti-ai-writing**: Core humanization patterns (use first)
-- **voice-analyzer**: Create custom voice profiles from writing samples
-- **transcript-polisher**: Clean raw transcripts before conversion
-- **hook-and-headline-writing**: Craft attention-grabbing headlines
-- **brand-identity-wizard**: Define brand voice for consistency
+| File | Contents |
+|------|----------|
+| `references/forbidden-patterns.md` | Complete AI pattern detection (200+ patterns) |
+| `references/humanization-workflow.md` | Step-by-step editing process + Charlie's moves |
+| `references/sucks-framework.md` | Pre-writing checklist |
+| `references/sticky-sentences-expanded.md` | Deep dive on memorable phrasing techniques |
+| `references/human-desires.md` | 8 core desires for emotional hooks |
+| `references/pirate-wires-*.md` | Voice examples |
 
 ---
 
-*This skill extends anti-ai-writing with voice adaptation and human desire frameworks. Use anti-ai-writing for basic humanization, and ghostwriter for full source material conversion with distinctive voice.*
+*Consolidates the former `ai-tells`, `human-writing`, and `ghostwriter` skills. Last updated: 2026-02-04.*

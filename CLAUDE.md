@@ -1,6 +1,6 @@
 # Content OS
 
-> 93 skills for AI-assisted content creation. Transform, don't generate.
+> 36 skills for AI-assisted content creation. Transform, don't generate.
 
 ## What This Is
 
@@ -20,7 +20,7 @@ A publishable GitHub repo bundling skills from across Charlie's workspaces into 
 
 ```
 content-os/
-├── skills/           # Skills across 13+ categories
+├── skills/           # Skills across 6 categories
 ├── examples/         # Example workspace configurations
 ├── scripts/
 │   └── install.sh    # Symlinks skills to user's workspace
@@ -48,6 +48,7 @@ This is the open-source skill library from the [Skill Stack](https://skillstack.
 
 ## Current Status
 
-- 135+ skills organized across 13 categories
+- 36 skills organized across 6 categories (writing, video, social, research, content, productivity)
 - Install script ready
 - Manifest cataloging all skills
+- Stripped to Charlie's original skills only (v2.0)

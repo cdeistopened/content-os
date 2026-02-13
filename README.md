@@ -1,8 +1,8 @@
 # Content OS
 
-> 93 skills for AI-assisted content creation, automation, and development. Transform, don't generate.
+> 36 skills for AI-assisted content creation. Transform, don't generate.
 
-Content OS is a collection of Claude Code skills for writers, podcasters, developers, and content creators. Each skill is a self-contained markdown file that teaches Claude how to perform a specific task.
+Content OS is a collection of Claude Code skills for writers, podcasters, and content creators. Each skill is a self-contained markdown file that teaches Claude how to perform a specific task.
 
 ## Quick Start
 
@@ -16,7 +16,7 @@ The installer prompts you to choose which skill categories to install.
 
 ## Skill Categories
 
-### Writing (14 skills)
+### Writing (15 skills)
 Core skills for human-sounding prose.
 
 | Skill | Description |
@@ -25,7 +25,7 @@ Core skills for human-sounding prose.
 | `ai-tells` | Detect and fix AI writing patterns |
 | `ghostwriter` | Transform source material into polished prose |
 | `human-writing` | Comprehensive human writing system |
-| `writing-style` | Charlie Deist's signature style rules |
+| `writing-style` | Core anti-AI patterns for all writing |
 | `hook-and-headline-writing` | Create compelling hooks and headlines |
 | `cold-open-creator` | Write attention-grabbing cold opens |
 | `transcript-polisher` | Clean transcripts while preserving voice |
@@ -33,8 +33,9 @@ Core skills for human-sounding prose.
 | `memo` | Write effective memos |
 | `dude-with-sign-writer` | Punchy sign-style statements |
 | `voice-pirate-wires` | Pirate Wires editorial voice |
-| `invisible-threads` | [Custom writing skill] |
+| `invisible-threads` | Narrative threading technique |
 | `verified-review` | Write authentic reviews |
+| `how-newsletters` | Newsletter strategy and tactics |
 
 ### Video & Podcast (9 skills)
 Production workflows for audio/video content.
@@ -51,39 +52,16 @@ Production workflows for audio/video content.
 | `short-form-video` | Short-form video content |
 | `day-in-the-life` | Day-in-the-life video format |
 
-### Newsletter (5 skills)
-Newsletter writing and production.
-
-| Skill | Description |
-|-------|-------------|
-| `skill-stack-newsletter-writer` | Newsletter template |
-| `opened-daily-newsletter-writer` | Daily format example |
-| `opened-weekly-newsletter-writer` | Weekly format example |
-| `opened-daily-style` | Daily newsletter style guide |
-| `how-newsletters` | Newsletter strategy and tactics |
-
-### Social (6 skills)
+### Social (5 skills)
 Social media content and advertising.
 
 | Skill | Description |
 |-------|-------------|
 | `social-content-creation` | Multi-platform social content |
 | `x-article-converter` | Convert articles to X threads |
-| `x-posting` | X/Twitter posting workflows |
+| `x-posting` | X/Twitter posting and scheduling |
 | `text-content` | General text content |
 | `meta-ads-creative` | Meta/Facebook ad creative |
-| `twitter-scraper` | Twitter data extraction |
-
-### Brand & Voice (5 skills)
-Capture and codify identity and voice.
-
-| Skill | Description |
-|-------|-------------|
-| `brand-identity-wizard` | Interactive brand capture |
-| `voice-matching-wizard` | Codify a writer's voice |
-| `voice-analyzer` | Analyze writing samples |
-| `opened-identity` | Brand identity example |
-| `guidelines-brand` | Brand guidelines example |
 
 ### Research (4 skills)
 SEO and knowledge management.
@@ -95,84 +73,20 @@ SEO and knowledge management.
 | `notebooklm` | Google NotebookLM integration |
 | `open-education-hub-deep-dives` | Deep dive research |
 
-### Automation (6 skills)
-Tool integration and automation.
+### Content (1 skill)
+Content generation and image creation.
 
 | Skill | Description |
 |-------|-------------|
-| `agent-browser` | Browser automation |
-| `bulk-transcribe` | Batch transcription |
-| `gemini-writer` | Gemini API integration |
-| `inbox-processor` | Email/inbox processing |
-| `pdf-ocr` | PDF text extraction |
-| `slack-cli` | Slack CLI integration |
+| `nano-banana-image-generator` | AI image generation with Gemini |
 
-### Design (8 skills)
-UI/UX and mobile design.
+### Productivity (2 skills)
+Personal productivity and strategic tools.
 
 | Skill | Description |
 |-------|-------------|
-| `ui-ux-pro-max` | Comprehensive UI/UX design |
-| `front-end-design` | Frontend design patterns |
-| `design-stealer` | Design inspiration extraction |
-| `expo-ios-designing` | Expo/React Native iOS design |
-| `iOS Expert` | iOS development expertise |
-| `ios-simulator-skill-main` | iOS simulator workflows |
-| `theme-factory` | Theme/design system creation |
-| `webapp-testing` | Web application testing |
-
-### Notion (4 skills)
-Notion integration and workflows.
-
-| Skill | Description |
-|-------|-------------|
-| `notion-knowledge-capture` | Capture knowledge to Notion |
-| `notion-meeting-intelligence` | Meeting notes to Notion |
-| `notion-research-documentation` | Research documentation |
-| `notion-spec-to-implementation` | Specs to code via Notion |
-
-### Canvas (4 skills)
-Claude canvas and artifact skills.
-
-| Skill | Description |
-|-------|-------------|
-| `canvas` | Canvas artifact creation |
-| `document` | Document artifacts |
-| `calendar` | Calendar artifacts |
-| `flight` | Flight planning artifacts |
-
-### Cursor (5 skills)
-Cursor IDE specific skills.
-
-| Skill | Description |
-|-------|-------------|
-| `create-skill` | Create new Cursor skills |
-| `create-rule` | Create Cursor rules |
-| `create-subagent` | Create Cursor subagents |
-| `migrate-to-skills` | Migrate to skills format |
-| `update-cursor-settings` | Manage Cursor settings |
-
-### Productivity (6 skills)
-Personal productivity and review.
-
-| Skill | Description |
-|-------|-------------|
-| `weekly-review` | Weekly review workflow |
-| `pre-mortem` | Pre-mortem analysis |
-| `remindctl` | Reminder management |
-| `vellum-prep` | Vellum preparation |
-| `bird` | [Custom productivity skill] |
-| `gog` | [Custom productivity skill] |
-
-### Meta (4 skills)
-Skills for creating skills.
-
-| Skill | Description |
-|-------|-------------|
-| `skill-creator` | Create new skills from scratch |
-| `skill-installer` | Install and manage skills |
-| `quality-loop` | Quality assurance workflow |
-| `image-prompt-generator` | AI image generation prompts |
+| `find-your-margin` | Find where your attention earns the fattest margin with AI |
+| `vellum-prep` | Vellum book preparation |
 
 ## Using Skills
 
@@ -192,7 +106,7 @@ Always load `skills/anti-ai-writing/SKILL.md` for any writing task.
 ## Customizing
 
 1. Fork this repo
-2. Copy example skills (like `opened-identity`) as templates
+2. Copy example skills as templates
 3. Replace brand-specific content with your own
 4. Create a CLAUDE.md for your workspace using `CLAUDE.md.template`
 
@@ -212,4 +126,4 @@ MIT
 
 ---
 
-*Built by [Charlie Deist](https://skillstack.md) for the Skill Stack community.*
+*Built by [Charlie Deist](https://skillstack.ai) for the Skill Stack community.*

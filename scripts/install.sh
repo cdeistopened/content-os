@@ -40,7 +40,7 @@ link_skill() {
 echo "Which skill categories would you like to install?"
 echo ""
 
-categories=("writing" "video" "newsletter" "social" "brand-voice" "research" "meta")
+categories=("writing" "video" "social" "research" "content" "productivity")
 
 for category in "${categories[@]}"; do
     read -p "Install $category skills? [Y/n] " -n 1 -r

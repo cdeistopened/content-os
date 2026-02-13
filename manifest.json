@@ -1,12 +1,12 @@
 {
   "name": "content-os",
-  "version": "1.0.0",
-  "description": "A modular skill library for AI-assisted content creation, automation, and development",
+  "version": "2.0.0",
+  "description": "A modular skill library for AI-assisted content creation. Transform, don't generate.",
   "author": "Charlie Deist",
   "repository": "github.com/cdeistopened/content-os",
   "stats": {
-    "totalSkills": 94,
-    "categories": 13
+    "totalSkills": 36,
+    "categories": 6
   },
   "categories": {
     "writing": {
@@ -19,6 +19,7 @@
         "email-writing",
         "ghostwriter",
         "hook-and-headline-writing",
+        "how-newsletters",
         "human-writing",
         "invisible-threads",
         "memo",
@@ -42,35 +43,14 @@
         "youtube-title-creator"
       ]
     },
-    "newsletter": {
-      "description": "Newsletter writing and production",
-      "skills": [
-        "how-newsletters",
-        "opened-daily-newsletter-writer",
-        "opened-daily-style",
-        "opened-weekly-newsletter-writer",
-        "skill-stack-newsletter-writer"
-      ]
-    },
     "social": {
-      "description": "Social media content and advertising",
+      "description": "Social media content and scheduling",
       "skills": [
         "meta-ads-creative",
         "social-content-creation",
         "text-content",
-        "twitter-scraper",
         "x-article-converter",
         "x-posting"
-      ]
-    },
-    "brand-voice": {
-      "description": "Brand identity and voice capture",
-      "skills": [
-        "brand-identity-wizard",
-        "guidelines-brand",
-        "opened-identity",
-        "voice-analyzer",
-        "voice-matching-wizard"
       ]
     },
     "research": {
@@ -82,77 +62,17 @@
         "seo-research"
       ]
     },
-    "automation": {
-      "description": "Automation and tool integration skills",
+    "content": {
+      "description": "Content generation and image creation tools",
       "skills": [
-        "agent-browser",
-        "bulk-transcribe",
-        "gemini-writer",
-        "inbox-processor",
-        "pdf-ocr",
-        "slack-cli"
-      ]
-    },
-    "design": {
-      "description": "UI/UX and mobile design skills",
-      "skills": [
-        "design-stealer",
-        "expo-ios-designing",
-        "front-end-design",
-        "iOS Expert",
-        "ios-simulator-skill-main",
-        "theme-factory",
-        "ui-ux-pro-max",
-        "webapp-testing"
-      ]
-    },
-    "notion": {
-      "description": "Notion integration and workflows",
-      "skills": [
-        "notion-knowledge-capture",
-        "notion-meeting-intelligence",
-        "notion-research-documentation",
-        "notion-spec-to-implementation"
-      ]
-    },
-    "canvas": {
-      "description": "Claude canvas and artifact skills",
-      "skills": [
-        "calendar",
-        "canvas",
-        "document",
-        "flight"
-      ]
-    },
-    "cursor": {
-      "description": "Cursor IDE specific skills",
-      "skills": [
-        "create-rule",
-        "create-skill",
-        "create-subagent",
-        "migrate-to-skills",
-        "update-cursor-settings"
+        "nano-banana-image-generator"
       ]
     },
     "productivity": {
-      "description": "Personal productivity and review skills",
+      "description": "Personal productivity and strategic tools",
       "skills": [
-        "bird",
         "find-your-margin",
-        "gog",
-        "pre-mortem",
-        "remindctl",
-        "vellum-prep",
-        "weekly-review"
-      ]
-    },
-    "meta": {
-      "description": "Skills for creating and managing skills",
-      "skills": [
-        "image-prompt-generator",
-        "quality-loop",
-        "skill-creator",
-        "skill-installer"
+        "vellum-prep"
       ]
     }
   }
